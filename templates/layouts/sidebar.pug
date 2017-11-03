@@ -1,0 +1,187 @@
+.col-md-3.left_col
+  .left_col.scroll-view
+    .navbar.nav_title(style='border: 0;')
+      a.site_title(href='index.html')
+        i.fa.fa-paw
+        span Gentelella Alela!
+    .clearfix
+    // menu profile quick info
+    .profile.clearfix
+      .profile_pic
+        img.img-circle.profile_img(src='/images/user.png', alt='...')
+      .profile_info
+        span Welcome,
+        h2 John Doe
+      .clearfix
+    // /menu profile quick info
+    br
+    // sidebar menu
+    #sidebar-menu.main_menu_side.hidden-print.main_menu
+      .menu_section
+        h3 General
+        ul.nav.side-menu
+          li
+            a
+              i.fa.fa-home
+              |  Home
+              span.fa.fa-chevron-down
+            ul.nav.child_menu
+              li
+                a(href='index.html') Dashboard
+              li
+                a(href='index2.html') Dashboard2
+              li
+                a(href='index3.html') Dashboard3
+          li
+            a
+              i.fa.fa-edit
+              |  Forms
+              span.fa.fa-chevron-down
+            ul.nav.child_menu
+              li
+                a(href='form.html') General Form
+              li
+                a(href='form_advanced.html') Advanced Components
+              li
+                a(href='form_validation.html') Form Validation
+              li
+                a(href='form_wizards.html') Form Wizard
+              li
+                a(href='form_upload.html') Form Upload
+              li
+                a(href='form_buttons.html') Form Buttons
+          li
+            a
+              i.fa.fa-desktop
+              |  UI Elements
+              span.fa.fa-chevron-down
+            ul.nav.child_menu
+              li
+                a(href='general_elements.html') General Elements
+              li
+                a(href='media_gallery.html') Media Gallery
+              li
+                a(href='typography.html') Typography
+              li
+                a(href='icons.html') Icons
+              li
+                a(href='glyphicons.html') Glyphicons
+              li
+                a(href='widgets.html') Widgets
+              li
+                a(href='invoice.html') Invoice
+              li
+                a(href='inbox.html') Inbox
+              li
+                a(href='calendar.html') Calendar
+          li
+            a
+              i.fa.fa-table
+              |  Tables
+              span.fa.fa-chevron-down
+            ul.nav.child_menu
+              li
+                a(href='tables.html') Tables
+              li
+                a(href='tables_dynamic.html') Table Dynamic
+          li
+            a
+              i.fa.fa-bar-chart-o
+              |  Data Presentation
+              span.fa.fa-chevron-down
+            ul.nav.child_menu
+              li
+                a(href='chartjs.html') Chart JS
+              li
+                a(href='chartjs2.html') Chart JS2
+              li
+                a(href='morisjs.html') Moris JS
+              li
+                a(href='echarts.html') ECharts
+              li
+                a(href='other_charts.html') Other Charts
+          li
+            a
+              i.fa.fa-clone
+              | Layouts
+              span.fa.fa-chevron-down
+            ul.nav.child_menu
+              li
+                a(href='fixed_sidebar.html') Fixed Sidebar
+              li
+                a(href='fixed_footer.html') Fixed Footer
+      .menu_section
+        h3 Live On
+        ul.nav.side-menu
+          li
+            a
+              i.fa.fa-bug
+              |  Additional Pages
+              span.fa.fa-chevron-down
+            ul.nav.child_menu
+              li
+                a(href='e_commerce.html') E-commerce
+              li
+                a(href='projects.html') Projects
+              li
+                a(href='project_detail.html') Project Detail
+              li
+                a(href='contacts.html') Contacts
+              li
+                a(href='profile.html') Profile
+          li
+            a
+              i.fa.fa-windows
+              |  Extras
+              span.fa.fa-chevron-down
+            ul.nav.child_menu
+              li
+                a(href='page_403.html') 403 Error
+              li
+                a(href='page_404.html') 404 Error
+              li
+                a(href='page_500.html') 500 Error
+              li
+                a(href='plain_page.html') Plain Page
+              li
+                a(href='login.html') Login Page
+              li
+                a(href='pricing_tables.html') Pricing Tables
+          li
+            a
+              i.fa.fa-sitemap
+              |  Multilevel Menu
+              span.fa.fa-chevron-down
+            ul.nav.child_menu
+              li
+                a(href='#level1_1') Level One
+              li
+                a
+                  | Level One
+                  span.fa.fa-chevron-down
+                ul.nav.child_menu
+                  li.sub_menu
+                    a(href='level2.html') Level Two
+                  li
+                    a(href='#level2_1') Level Two
+                  li
+                    a(href='#level2_2') Level Two
+              li
+                a(href='#level1_2') Level One
+          li
+            a(href='javascript:void(0)')
+              i.fa.fa-laptop
+              |  Landing Page
+              span.label.label-success.pull-right Coming Soon
+    // /sidebar menu
+    // /menu footer buttons
+    .sidebar-footer.hidden-small
+      a(data-toggle='tooltip', data-placement='top', title='Settings')
+        span.glyphicon.glyphicon-cog(aria-hidden='true')
+      a(data-toggle='tooltip', data-placement='top', title='FullScreen')
+        span.glyphicon.glyphicon-fullscreen(aria-hidden='true')
+      a(data-toggle='tooltip', data-placement='top', title='Lock')
+        span.glyphicon.glyphicon-eye-close(aria-hidden='true')
+      a(data-toggle='tooltip', data-placement='top', title='Logout', href='login.html')
+        span.glyphicon.glyphicon-off(aria-hidden='true')
+    // /menu footer buttons
