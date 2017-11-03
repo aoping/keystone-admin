@@ -6,13 +6,16 @@ html(lang='en')
     meta(charset='utf-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
     meta(name='viewport', content='width=device-width, initial-scale=1')
-    title Gentelella Alela!
+    title Gentelella Alela! 
     // Bootstrap
     link(href='/bootstrap/dist/css/bootstrap.min.css', rel='stylesheet')
     // Font Awesome
     link(href='/font-awesome/css/font-awesome.min.css', rel='stylesheet')
     // NProgress
     link(href='/nprogress/nprogress.css', rel='stylesheet')
+    // jQuery custom content scroller
+    link(href='/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css', rel='stylesheet')
+    block styles
     // Custom Theme Style
     link(href='/gentelella/build/css/custom.min.css', rel='stylesheet')
   body.nav-md
@@ -27,12 +30,12 @@ html(lang='en')
         // page content
         .right_col(role='main')
           block content
-          // /page content
+        // /page content
         // footer content
         footer
           .pull-right
-            | Gentelella - Bootstrap Admin Template by
-            a(href='https://colorlib.com') Colorlib
+            | keystone-admin by 
+            a(href='https://github.com/aoping') zoro
           .clearfix
         // /footer content
     // jQuery
@@ -43,5 +46,9 @@ html(lang='en')
     script(src='/fastclick/lib/fastclick.js')
     // NProgress
     script(src='/nprogress/nprogress.js')
+    // jQuery custom content scroller
+    script(src='/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js')
+    block scripts
     // Custom Theme Scripts
     script(src='/gentelella/build/js/custom.min.js')
+
