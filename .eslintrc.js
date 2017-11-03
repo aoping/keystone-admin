@@ -36,7 +36,7 @@ module.exports = {
     // "arrow-body-style": ["error", "always"],
     // // allow debugger during development
     // "no-debugger": process.env.NODE_ENV === "production" ? 2 : 0,
-    // "no-unused-vars": 0,
+    "no-unused-vars": 0,
     // "no-alert": 1,
     // "no-mixed-spaces-and-tabs": 0,
     // "no-console": 0,
@@ -58,8 +58,8 @@ module.exports = {
     // "arrow-parens": 0,
     // "dot-notation": 0,
     // "no-trailing-spaces": 0,
-    // "no-param-reassign": 0,
-    // "no-shadow": 0,
+    "no-param-reassign": 0,
+    "no-shadow": 0,
     // "arrow-body-style": 0,
     // "no-plusplus": 0,
 
@@ -70,7 +70,7 @@ module.exports = {
     // "no-new": 0,
     // "no-restricted-syntax": 0,
     // "no-dupe-keys": 0,
-    // "no-underscore-dangle": 0,
+    "no-underscore-dangle": 0,
     // "guard-for-in": 0,
     // "no-useless-escape": 0,
     // "no-bitwise": 0,
