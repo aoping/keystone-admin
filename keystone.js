@@ -8,12 +8,17 @@ const keystone = require('keystone')
 const config = require('./config')
 const lodash = require('lodash')
 
+const staticDirArr = [
+  path.join(__dirname, 'public'),
+  path.join(__dirname, 'vendors'),
+]
+
 keystone.init({
   'name': 'keystone-admin',
   'brand': 'keystone-admin',
 
   'less': 'public',
-  'static': 'public',
+  'static': staticDirArr,
   'favicon': 'public/favicon.ico',
   'views': 'views',
   'view engine': 'pug',

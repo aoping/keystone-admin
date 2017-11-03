@@ -16,4 +16,5 @@ const routes = {
 exports = module.exports = function (app) {
   // Views
   app.get('/', routes.views.index)
+  app.get('/', routes.views.index)
 }

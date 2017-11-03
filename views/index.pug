@@ -1,23 +1,73 @@
-extends ./../templates/layouts/default
-
-block content
-  .container: .jumbotron
-    img(src='/images/logo.svg', width='160')
-    h1 Welcome
-    p This is your new <a href='http://keystonejs.com' target='_blank'>KeystoneJS</a> website.
-    p It includes the latest versions of
-      | <a href='http://getbootstrap.com/' target='_blank'>Bootstrap</a>
-      | and <a href='http://www.jquery.com/' target='_blank'>jQuery</a>.
-    p Visit the <a href='http://keystonejs.com/guide' target='_blank'>Getting Started</a> guide to learn how to customise it.
-    hr
-    if user && user.canAccessKeystone
-      p
-        a(href='/keystone').btn.btn-lg.btn-primary Open the Admin UI
-    else
-      p We have created a default Admin user for you with the email <strong>user@keystonejs.com</strong> and the password <strong>admin</strong>.
-      p
-        a(href='/keystone/signin', style='margin-right: 10px').btn.btn-lg.btn-primary Sign in
-        |  to use the Admin UI.
-    hr
-    p Remember to <a href='https://github.com/keystonejs/keystone' target='_blank'>Star KeystoneJS on GitHub</a> and
-      | <a href='https://twitter.com/keystonejs' target='_blank'>follow @keystonejs</a> on twitter for updates.
+doctype html
+html(lang='en')
+  head
+    meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+    // Meta, title, CSS, favicons, etc.
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title Gentelella Alela!
+    // Bootstrap
+    link(href='/bootstrap/dist/css/bootstrap.min.css', rel='stylesheet')
+    // Font Awesome
+    link(href='/font-awesome/css/font-awesome.min.css', rel='stylesheet')
+    // NProgress
+    link(href='/nprogress/nprogress.css', rel='stylesheet')
+    // Animate.css
+    link(href='/animate.css/animate.min.css', rel='stylesheet')
+    // Custom Theme Style
+    link(href='/gentelella/build/css/custom.min.css', rel='stylesheet')
+  body.login
+    div
+      a#signup.hiddenanchor
+      a#signin.hiddenanchor
+      .login_wrapper
+        .animate.form.login_form
+          section.login_content
+            form
+              h1 Login Form
+              div
+                input.form-control(type='text', placeholder='Username', required='')
+              div
+                input.form-control(type='password', placeholder='Password', required='')
+              div
+                a.btn.btn-default.submit(href='index.html') Log in
+                a.reset_pass(href='#') Lost your password?
+              .clearfix
+              .separator
+                p.change_link
+                  | New to site?
+                  a.to_register(href='#signup')  Create Account
+                .clearfix
+                br
+                div
+                  h1
+                    i.fa.fa-paw
+                    |  Gentelella Alela!
+                  p
+                    | ©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms
+        #register.animate.form.registration_form
+          section.login_content
+            form
+              h1 Create Account
+              div
+                input.form-control(type='text', placeholder='Username', required='')
+              div
+                input.form-control(type='email', placeholder='Email', required='')
+              div
+                input.form-control(type='password', placeholder='Password', required='')
+              div
+                a.btn.btn-default.submit(href='index.html') Submit
+              .clearfix
+              .separator
+                p.change_link
+                  | Already a member ?
+                  a.to_register(href='#signin')  Log in
+                .clearfix
+                br
+                div
+                  h1
+                    i.fa.fa-paw
+                    |  Gentelella Alela!
+                  p
+                    | ©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms

@@ -1,110 +1,334 @@
-include ../mixins/flash-messages
-
 doctype html
-html
-
-  //- HTML HEADER
+html(lang='en')
   head
-    meta(charset="utf-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    meta(http-equiv="X-UA-Compatible" content="IE=edge")
-
-    title= title || 'keystone-admin'
-    link(rel="shortcut icon", href="/favicon.ico", type="image/x-icon")
-
-    //- Customise the stylesheet for your site by editing /public/styles/site.less
-    //- All .less files will be automatically compiled and minified in production.
-    link(href="/styles/site.min.css", rel="stylesheet")
-
-    //- This file provides the default styling for the KeystoneJS Content Editor
-    if user && user.canAccessKeystone
-      link(href="/keystone/styles/content/editor.min.css", rel="stylesheet")
-
-    //- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
-    //- Safely remove this block if you are not targeting IE8
-    //-[if lt IE 9]
-      script(src="//cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.js")
-      script(src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js")
-    //-[endif]
-
-    //- Include template-specific stylesheets by extending the css block
-    block css
-
-    //- Add any other template-specific HEAD tags by extending the head block
-    block head
-
-  //- HTML BODY
-  body
-
-    //- HEADER
-    #header: .container
-
-      //- Customise your site's navigation by changing the navLinks Array in ./routes/middleware.js
-      //- ... or completely change this header to suit your design.
-
-      div(role="navigation").navbar.navbar-default
-        .container-fluid
-          .navbar-header
-            button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
-              span.sr-only Toggle navigation
-              span.icon-bar
-              span.icon-bar
-              span.icon-bar
-            a.navbar-brand(href='/') keystone-admin
-          .collapse.navbar-collapse
-            ul.nav.navbar-nav.navbar-left
-              each link in navLinks
-                li(class=(section == link.key ? 'active' : null)): a(href=link.href)= link.label
-            ul.nav.navbar-nav.navbar-right
-              if user
-                if user.canAccessKeystone
-                  li: a(href='/keystone') Open Keystone
-                li: a(href='/keystone/signout') Sign Out
-              else
-                li: a(href='/keystone/signin') Sign In
-
-    //- BODY
-    #body
-
-      //- NOTE:
-      //- There is no .container wrapping class around body blocks to allow more flexibility in design.
-      //- Remember to include it in your templates when you override the intro and content blocks!
-
-      //- The Intro block appears above flash messages (used for temporary information display)
-      block intro
-
-      //- Flash messages allow you to display once-off status messages to users, e.g. form
-      //- validation errors, success messages, etc.
-      +flash-messages(messages)
-
-      //- The content block should contain the body of your template's content
-      block content
-
-
-    //- FOOTER
-    .container: #footer
-
-      //- You don't _have_ to include a link saying your site is powered by KeystoneJS, but we appreciate it!
-      p Powered by <a href="http://keystonejs.com" target="_blank">KeystoneJS</a>.
-
-
-    //- JAVASCRIPT
-
-    //- jQuery 1.11.3 is included by default, and required by both Bootstrap
-    //- and the KeystoneJS Content Editor. If you are not targeting IE8,
-    //- you can upgrade to 2.1.4 (also bundled) for better performance.
-    script(src='/js/jquery/jquery-1.11.3.min.js')
-
-    //- Customise which Bootstrap javascript files are served by including
-    //- them specifically here, instead of bootstrap-3.3.5.min.js
-    script(src='/js/bootstrap/bootstrap-3.3.5.min.js')
-
-    //- The KeystoneJS Content Editor provides support for ks-editable data attributes,
-    //- which generate links to edit content for users who can access Keystone
-    if user && user.canAccessKeystone
-      script(src='/keystone/js/content/editor.js')
-
-    //- Add scripts that are globally required by your site here.
-
-    //- Include template-specific javascript files by extending the js block
-    block js
+    meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+    // Meta, title, CSS, favicons, etc.
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title Gentelella Alela!
+    // Bootstrap
+    link(href='/bootstrap/dist/css/bootstrap.min.css', rel='stylesheet')
+    // Font Awesome
+    link(href='/font-awesome/css/font-awesome.min.css', rel='stylesheet')
+    // NProgress
+    link(href='/nprogress/nprogress.css', rel='stylesheet')
+    // Custom Theme Style
+    link(href='/gentelella/build/css/custom.min.css', rel='stylesheet')
+  body.nav-md
+    .container.body
+      .main_container
+        .col-md-3.left_col
+          .left_col.scroll-view
+            .navbar.nav_title(style='border: 0;')
+              a.site_title(href='index.html')
+                i.fa.fa-paw
+                span Gentelella Alela!
+            .clearfix
+            // menu profile quick info
+            .profile.clearfix
+              .profile_pic
+                img.img-circle.profile_img(src='images/img.jpg', alt='...')
+              .profile_info
+                span Welcome,
+                h2 John Doe
+              .clearfix
+            // /menu profile quick info
+            br
+            // sidebar menu
+            #sidebar-menu.main_menu_side.hidden-print.main_menu
+              .menu_section
+                h3 General
+                ul.nav.side-menu
+                  li
+                    a
+                      i.fa.fa-home
+                      |  Home
+                      span.fa.fa-chevron-down
+                    ul.nav.child_menu
+                      li
+                        a(href='index.html') Dashboard
+                      li
+                        a(href='index2.html') Dashboard2
+                      li
+                        a(href='index3.html') Dashboard3
+                  li
+                    a
+                      i.fa.fa-edit
+                      |  Forms
+                      span.fa.fa-chevron-down
+                    ul.nav.child_menu
+                      li
+                        a(href='form.html') General Form
+                      li
+                        a(href='form_advanced.html') Advanced Components
+                      li
+                        a(href='form_validation.html') Form Validation
+                      li
+                        a(href='form_wizards.html') Form Wizard
+                      li
+                        a(href='form_upload.html') Form Upload
+                      li
+                        a(href='form_buttons.html') Form Buttons
+                  li
+                    a
+                      i.fa.fa-desktop
+                      |  UI Elements
+                      span.fa.fa-chevron-down
+                    ul.nav.child_menu
+                      li
+                        a(href='general_elements.html') General Elements
+                      li
+                        a(href='media_gallery.html') Media Gallery
+                      li
+                        a(href='typography.html') Typography
+                      li
+                        a(href='icons.html') Icons
+                      li
+                        a(href='glyphicons.html') Glyphicons
+                      li
+                        a(href='widgets.html') Widgets
+                      li
+                        a(href='invoice.html') Invoice
+                      li
+                        a(href='inbox.html') Inbox
+                      li
+                        a(href='calendar.html') Calendar
+                  li
+                    a
+                      i.fa.fa-table
+                      |  Tables
+                      span.fa.fa-chevron-down
+                    ul.nav.child_menu
+                      li
+                        a(href='tables.html') Tables
+                      li
+                        a(href='tables_dynamic.html') Table Dynamic
+                  li
+                    a
+                      i.fa.fa-bar-chart-o
+                      |  Data Presentation
+                      span.fa.fa-chevron-down
+                    ul.nav.child_menu
+                      li
+                        a(href='chartjs.html') Chart JS
+                      li
+                        a(href='chartjs2.html') Chart JS2
+                      li
+                        a(href='morisjs.html') Moris JS
+                      li
+                        a(href='echarts.html') ECharts
+                      li
+                        a(href='other_charts.html') Other Charts
+                  li
+                    a
+                      i.fa.fa-clone
+                      | Layouts
+                      span.fa.fa-chevron-down
+                    ul.nav.child_menu
+                      li
+                        a(href='fixed_sidebar.html') Fixed Sidebar
+                      li
+                        a(href='fixed_footer.html') Fixed Footer
+              .menu_section
+                h3 Live On
+                ul.nav.side-menu
+                  li
+                    a
+                      i.fa.fa-bug
+                      |  Additional Pages
+                      span.fa.fa-chevron-down
+                    ul.nav.child_menu
+                      li
+                        a(href='e_commerce.html') E-commerce
+                      li
+                        a(href='projects.html') Projects
+                      li
+                        a(href='project_detail.html') Project Detail
+                      li
+                        a(href='contacts.html') Contacts
+                      li
+                        a(href='profile.html') Profile
+                  li
+                    a
+                      i.fa.fa-windows
+                      |  Extras
+                      span.fa.fa-chevron-down
+                    ul.nav.child_menu
+                      li
+                        a(href='page_403.html') 403 Error
+                      li
+                        a(href='page_404.html') 404 Error
+                      li
+                        a(href='page_500.html') 500 Error
+                      li
+                        a(href='plain_page.html') Plain Page
+                      li
+                        a(href='login.html') Login Page
+                      li
+                        a(href='pricing_tables.html') Pricing Tables
+                  li
+                    a
+                      i.fa.fa-sitemap
+                      |  Multilevel Menu
+                      span.fa.fa-chevron-down
+                    ul.nav.child_menu
+                      li
+                        a(href='#level1_1') Level One
+                      li
+                        a
+                          | Level One
+                          span.fa.fa-chevron-down
+                        ul.nav.child_menu
+                          li.sub_menu
+                            a(href='level2.html') Level Two
+                          li
+                            a(href='#level2_1') Level Two
+                          li
+                            a(href='#level2_2') Level Two
+                      li
+                        a(href='#level1_2') Level One
+                  li
+                    a(href='javascript:void(0)')
+                      i.fa.fa-laptop
+                      |  Landing Page
+                      span.label.label-success.pull-right Coming Soon
+            // /sidebar menu
+            // /menu footer buttons
+            .sidebar-footer.hidden-small
+              a(data-toggle='tooltip', data-placement='top', title='Settings')
+                span.glyphicon.glyphicon-cog(aria-hidden='true')
+              a(data-toggle='tooltip', data-placement='top', title='FullScreen')
+                span.glyphicon.glyphicon-fullscreen(aria-hidden='true')
+              a(data-toggle='tooltip', data-placement='top', title='Lock')
+                span.glyphicon.glyphicon-eye-close(aria-hidden='true')
+              a(data-toggle='tooltip', data-placement='top', title='Logout', href='login.html')
+                span.glyphicon.glyphicon-off(aria-hidden='true')
+            // /menu footer buttons
+        // top navigation
+        .top_nav
+          .nav_menu
+            nav
+              .nav.toggle
+                a#menu_toggle
+                  i.fa.fa-bars
+              ul.nav.navbar-nav.navbar-right
+                li
+                  a.user-profile.dropdown-toggle(href='javascript:;', data-toggle='dropdown', aria-expanded='false')
+                    img(src='images/img.jpg', alt='')
+                    | John Doe
+                    span.fa.fa-angle-down
+                  ul.dropdown-menu.dropdown-usermenu.pull-right
+                    li
+                      a(href='javascript:;')  Profile
+                    li
+                      a(href='javascript:;')
+                        span.badge.bg-red.pull-right 50%
+                        span Settings
+                    li
+                      a(href='javascript:;') Help
+                    li
+                      a(href='login.html')
+                        i.fa.fa-sign-out.pull-right
+                        |  Log Out
+                li.dropdown(role='presentation')
+                  a.dropdown-toggle.info-number(href='javascript:;', data-toggle='dropdown', aria-expanded='false')
+                    i.fa.fa-envelope-o
+                    span.badge.bg-green 6
+                  ul#menu1.dropdown-menu.list-unstyled.msg_list(role='menu')
+                    li
+                      a
+                        span.image
+                          img(src='images/img.jpg', alt='Profile Image')
+                        span
+                          span John Smith
+                          span.time 3 mins ago
+                        span.message
+                          | Film festivals used to be do-or-die moments for movie makers. They were where...
+                    li
+                      a
+                        span.image
+                          img(src='images/img.jpg', alt='Profile Image')
+                        span
+                          span John Smith
+                          span.time 3 mins ago
+                        span.message
+                          | Film festivals used to be do-or-die moments for movie makers. They were where...
+                    li
+                      a
+                        span.image
+                          img(src='images/img.jpg', alt='Profile Image')
+                        span
+                          span John Smith
+                          span.time 3 mins ago
+                        span.message
+                          | Film festivals used to be do-or-die moments for movie makers. They were where...
+                    li
+                      a
+                        span.image
+                          img(src='images/img.jpg', alt='Profile Image')
+                        span
+                          span John Smith
+                          span.time 3 mins ago
+                        span.message
+                          | Film festivals used to be do-or-die moments for movie makers. They were where...
+                    li
+                      .text-center
+                        a
+                          strong See All Alerts
+                          i.fa.fa-angle-right
+        // /top navigation
+        // page content
+        .right_col(role='main')
+          div
+            .page-title
+              .title_left
+                h3 Plain Page
+              .title_right
+                .col-md-5.col-sm-5.col-xs-12.form-group.pull-right.top_search
+                  .input-group
+                    input.form-control(type='text', placeholder='Search for...')
+                    span.input-group-btn
+                      button.btn.btn-default(type='button') Go!
+            .clearfix
+            .row
+              .col-md-12.col-sm-12.col-xs-12
+                .x_panel
+                  .x_title
+                    h2 Plain Page
+                    ul.nav.navbar-right.panel_toolbox
+                      li
+                        a.collapse-link
+                          i.fa.fa-chevron-up
+                      li.dropdown
+                        a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
+                          i.fa.fa-wrench
+                        ul.dropdown-menu(role='menu')
+                          li
+                            a(href='#') Settings 1
+                          li
+                            a(href='#') Settings 2
+                      li
+                        a.close-link
+                          i.fa.fa-close
+                    .clearfix
+                  .x_content
+                    | Add content to the page ...
+        // /page content
+        // footer content
+        footer
+          .pull-right
+            | Gentelella - Bootstrap Admin Template by
+            a(href='https://colorlib.com') Colorlib
+          .clearfix
+        // /footer content
+    // jQuery
+    script(src='/jquery/dist/jquery.min.js')
+    // Bootstrap
+    script(src='/bootstrap/dist/js/bootstrap.min.js')
+    // FastClick
+    script(src='/fastclick/lib/fastclick.js')
+    // NProgress
+    script(src='/nprogress/nprogress.js')
+    // Custom Theme Scripts
+    script(src='/gentelella/build/js/custom.min.js')
