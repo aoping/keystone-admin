@@ -1,19 +1,19 @@
-var keystone = require('keystone');
-var middleware = require('./middleware');
-var importRoutes = keystone.importer(__dirname);
+const keystone = require('keystone')
+const middleware = require('./middleware')
+
+const importRoutes = keystone.importer(__dirname)
 
 // Common Middleware
-keystone.pre('routes', middleware.initLocals);
-keystone.pre('render', middleware.flashMessages);
+keystone.pre('routes', middleware.initLocals)
+keystone.pre('render', middleware.flashMessages)
 
 // Import Route Controllers
-var routes = {
-	views: importRoutes('./views'),
-};
+const routes = {
+  views: importRoutes('./../controller'),
+}
 
 // Setup Route Bindings
 exports = module.exports = function (app) {
-	// Views
-	app.get('/', routes.views.index);
-
-};
+  // Views
+  app.get('/', routes.views.index)
+}
