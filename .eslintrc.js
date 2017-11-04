@@ -92,6 +92,8 @@ module.exports = {
     // "no-void": 0,
     // "no-use-before-define": 0,
     // "no-nested-ternary": 0,
-    // "no-unneeded-ternary": 0
+    // "no-unneeded-ternary": 0,
+
+    "no-useless-constructor": 0
   }
 };
